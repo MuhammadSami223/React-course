@@ -7,7 +7,11 @@ const Addtodo = () => {
 
     const addTodoHandler=(e)=>{
         e.preventDefault()
-        dispatch(addTodo(input))
+        if (input.trim()=== "") {
+          alert("please enter a Todo")
+          return;
+        }
+        dispatch(addTodo(input.trim()))
         setInput('')
     }
   return (
